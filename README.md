@@ -8,14 +8,16 @@
 
 ### Run MUSE
 
-Run the following commands:
+Run the following commands in a command shell:
 ```
 git clone https://github.com/Muster-Suchen-und-Erkennen/muse-docker.git
 cd muse-docker
 docker-compose up
 ```
 
-Afterwards, open a browser and navigate to http://localhost:8080.
+Afterwards, open a browser and navigate to http://localhost:8080 (note: first run could take several minutes).
+
+You can stop MUSE by pressing `Ctrl+C` in your command window.
 
 ### Notice
 
