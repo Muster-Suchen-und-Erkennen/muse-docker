@@ -1,13 +1,19 @@
 version: '3'
-
 services:
-
-
   ui:
     build: ./ui
     image: muse/ui:latest
     ports:
       - "8080:80"
+    networks:
+      - muse
+  server:
+    build: ./server
+    image: muse/server:latest
+    ports:
+      - "3000:3000"
+    networks:
+      - muse
   db:
     build: ./db
     image: muse/db:latest
@@ -17,4 +23,9 @@ services:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_USER: muse
       MYSQL_PASSWORD: muse
-      MYSQL_DATABASE: muse
+      MYSQL_DATABASE: KostuemRepo
+    networks:
+      - muse
+networks:
+  muse:
+    driver: bridge
